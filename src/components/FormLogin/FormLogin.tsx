@@ -1,9 +1,13 @@
 import { FormEvent, useId, useState } from "react";
 import styles from "./FormLogin.module.scss";
+import { useAppDispatch } from "../../store/store";
+import { loginUser } from "../../store/slices/actionCreators";
 
 export const FormLogin = () => {
   const [loginValue, setLoginValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
+
+  const dispatch = useAppDispatch();
 
   const nameId = useId();
   const passwordId = useId();
@@ -11,6 +15,7 @@ export const FormLogin = () => {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
+    dispatch(loginUser({ login: loginValue, password: passwordValue }));
 
     setLoginValue("");
     setPasswordValue("");
