@@ -2,7 +2,7 @@ import { FormEvent, useId, useState } from "react";
 import styles from "./FormLogin.module.scss";
 
 export const FormLogin = () => {
-  const [nameValue, setNameValue] = useState("");
+  const [loginValue, setLoginValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
 
   const nameId = useId();
@@ -12,12 +12,12 @@ export const FormLogin = () => {
     e.preventDefault();
 
 
-    setNameValue("");
+    setLoginValue("");
     setPasswordValue("");
   };
 
-  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setNameValue(e.target.value);
+  const handleLoginChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setLoginValue(e.target.value);
   };
 
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -29,12 +29,12 @@ export const FormLogin = () => {
       <form onSubmit={handleSubmit} className={styles.form}>
         <h2>Login form</h2>
         <label htmlFor={nameId} className={styles.label}>
-          <span>Name:</span>
+          <span>Login:</span>
           <input
             type="text"
             name={nameId}
-            value={nameValue}
-            onChange={handleNameChange}
+            value={loginValue}
+            onChange={handleLoginChange}
           />
         </label>
         <label htmlFor={passwordId} className={styles.label}>
@@ -47,7 +47,7 @@ export const FormLogin = () => {
           />
         </label>
         <button type="submit" className={styles.button}>
-          Login
+          Submit
         </button>
       </form>
     </div>
