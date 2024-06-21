@@ -1,4 +1,8 @@
-export const Paths = {
+export const Paths= {
   HOME: '/',
-  DASHBOARD: '/dashboard',
+  REGISTER: '/register',
+  LOGIN: '/login',
+  STATUS: '/status',
+  EMPLOYEES: '/employees',
+  EMPLOYEE: '/employees/:id',
 } as const;
